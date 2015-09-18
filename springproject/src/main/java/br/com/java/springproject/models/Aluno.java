@@ -20,12 +20,13 @@ public class Aluno {
 	private Integer id;
 	private String nome;
 	private Integer matricula;
+	
 	@ManyToMany
 	@JoinTable(name="professores_alunos",
 	joinColumns={  @JoinColumn(name="professor_id")
 	},inverseJoinColumns={ @JoinColumn(name="aluno_id")
 	})
-	private List<Professor> professores;
+	private List<Professor> professores = new ArrayList<Professor>();
 	
 	public Aluno() {}
 

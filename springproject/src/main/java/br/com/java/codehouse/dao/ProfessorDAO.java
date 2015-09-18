@@ -27,4 +27,9 @@ public class ProfessorDAO {
 		
 	}
 	
+	
+	public Professor buscarPorId(Integer id){
+		return entityManager.createQuery("from professor p where p.id = :id",Professor.class).setParameter("id",id).getSingleResult();
+	}
+	
 }
